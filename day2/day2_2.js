@@ -1,4 +1,4 @@
-const input2 = `42 44 47 49 51 52 54 52
+const input = `42 44 47 49 51 52 54 52
 24 27 30 31 32 35 36 36
 80 82 85 86 87 90 94
 4 5 7 10 13 14 20
@@ -1033,6 +1033,7 @@ const safes = lines.reduce((acc, current, i) => {
 
       if (checkLine(aux)) {
         check = true;
+        index = current.length;
       }
     }
   }
