@@ -1,4 +1,4 @@
-const input = `42 44 47 49 51 52 54 52
+const input2 = `42 44 47 49 51 52 54 52
 24 27 30 31 32 35 36 36
 80 82 85 86 87 90 94
 4 5 7 10 13 14 20
@@ -1003,13 +1003,12 @@ const lines = input.split(/\r?\n|\r|\n/g).map((line) => {
   return line.split(' ').map(parseFloat);
 });
 
-const safes = lines.reduce((acc, current, i) => {
+const checkLine = (line) => {
   let res = true;
+  const asc = line[1] - line[0] >= 0;
 
-  const asc = current[1] - current[0] >= 0;
-
-  for (let index = 0; index < current.length - 1; index++) {
-    const diff = current[index + 1] - current[index];
+  for (let index = 0; index < line.length - 1; index++) {
+    const diff = line[index + 1] - line[index];
 
     if (asc) {
       if (diff < 1 || diff > 3) {
@@ -1021,8 +1020,24 @@ const safes = lines.reduce((acc, current, i) => {
       }
     }
   }
-  console.log('line ', i, '  ', res);
-  return res ? acc + 1 : acc;
+  return res;
+};
+
+const safes = lines.reduce((acc, current, i) => {
+  let check = checkLine(current);
+
+  if (!check) {
+    for (let index = 0; index < current.length; index++) {
+      const aux = [...current];
+      aux.splice(index, 1);
+
+      if (checkLine(aux)) {
+        check = true;
+      }
+    }
+  }
+
+  return check ? acc + 1 : acc;
 }, 0);
 
 console.log(safes);
