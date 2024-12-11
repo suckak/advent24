@@ -18,10 +18,10 @@ Mis respuestas para los problemas de la edición 2024 del advent code en JS
   - [x] part two
 - Day 5
   - [x] part one
-  - [] part two
+  - [ ] part two
 - Day 6
   - [x] part one
-  - [] part two
+  - [ ] part two
 - Day 7
   - [x] part one
   - [x] part two
