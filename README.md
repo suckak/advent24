@@ -25,3 +25,12 @@ Mis respuestas para los problemas de la edición 2024 del advent code en JS
 - Day 7
   - [x] part one
   - [x] part two
+- Day 8
+  - [ ] part one
+  - [ ] part two
+- Day 9
+  - [ ] part one
+  - [ ] part two
+- Day 10
+  - [x] part one
+  - [x] part two
